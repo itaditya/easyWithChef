@@ -1,0 +1,13 @@
+1491058808216	geckodriver	INFO	Listening on 127.0.0.1:50982
+1491058810236	mozprofile::profile	INFO	Using profile path C:\Users\hp\AppData\Local\Temp\rust_mozprofile.ha2pLegNRWLA
+1491058810239	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1491058810251	geckodriver::marionette	INFO	Connecting to Marionette on localhost:50990
+1491058815767	Marionette	INFO	Listening on port 50990
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345

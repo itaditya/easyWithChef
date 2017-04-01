@@ -31,6 +31,23 @@ class Menu():
                 print("Invalid choice, please choose again\n")
 
         print("==================")
+
+    def QuesMenu(self,quesList):
+        while True:
+            total = len(quesList)
+            print("Select Question 1 to {} or  0 to quit".format(total))
+            print("S.No.\t Name\t\t Code\n")
+            for i,ques in enumerate(quesList):
+                print("{})\t {} \t {} \n".format(i+1,ques["quesName"],ques["quesCode"]))
+            choice = int(raw_input(">>> ").lower().rstrip())
+            if choice==0:
+                sys.exit()
+            elif choice > 0 and choice <= total:
+                return(choice - 1)
+            else:
+                print("Invalid choice, please choose again\n")
+
+        print("==================")
         
 
 def main():

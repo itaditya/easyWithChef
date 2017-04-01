@@ -1,22 +1,26 @@
 import subprocess
-class Menu():
+class File():
 
     def __init__(self):
-        self.fileName = "test.html"
-        self.project = {"location" : "F:/testing"}
+        self.project = {"location" : "F:/testing/"}
+        self.filePath = ""
 
-    def create(self):
+    def createFiles(self,quesCode):
         print("----")
-        # subprocess.Popen(
-        #     ['touch',self.fileName], cwd=self.project["location"])
-        subprocess.call('echo abcd > test.html', shell=True,cwd=self.project["location"])
+        self.filePath = self.project["location"] + quesCode + ".c"
+        template = ""
+        with open("local/c-template.txt", "r") as fIn:
+            template = fIn.read() + "\n"
+        with open(self.filePath, "w") as fOut:
+            fOut.write(template)
+
+    def openFile(self):
         subprocess.Popen(
-            ['subl', self.project["location"]])
+            ['subl', self.filePath])
 
 def main():
-    app = Menu()
-    app.create()
-
+    app = File()
+    app.createFiles("START1")
 
 if __name__ == '__main__':
     main()
